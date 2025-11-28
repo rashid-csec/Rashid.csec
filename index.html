@@ -1,12 +1,247 @@
-<!DOCTYPE html>
+<!DOCTYPE TML>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Who Am I - Developer Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+        }
+        /* Custom Hover Effect for Tool Boxes */
+        .tool-box {
+            transition: all 0.3s ease;
+        }
+        .tool-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.4), 0 4px 6px -2px rgba(239, 68, 68, 0.2);
+        }
+    </style>
 </head>
-<body>
-    <h1>Hello, Worldoomp!</h1>
-</body>
-</html>
+<body class="min-h-screen flex items-start justify-center p-4 sm:p-8">
 
+    <!-- Main Content Wrapper -->
+    <div class="max-w-6xl w-full">
+
+        <!-- 1. ABOUT ME SECTION -->
+        <section class="bg-black shadow-2xl rounded-xl overflow-hidden mt-8 md:mt-12">
+            <div class="flex flex-col lg:flex-row">
+
+                <!-- Left Side: Content -->
+                <div class="lg:w-2/3 p-6 sm:p-10 md:p-12 text-gray-200">
+                    <!-- About Me Header -->
+                    <p class="text-red-500 font-semibold text-sm mb-2">
+                        <span class="mr-2">»</span> About me
+                    </p>
+                    <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6">
+                        Who Am I
+                    </h1>
+
+                    <!-- Bio Text -->
+                    <p class="text-gray-400 leading-relaxed mb-8 text-sm sm:text-base">
+                        My name is Rashid, Certified Cybersecurity Analyst with hands-on experience in SOC monitoring, VAPT, SIEM log analysis, and threat detection using Splunk, Snort, and ELK Stack. Completed an internship at RedTeam Hacker Academy and earned the Certified Penetration Tester (CPT) certification after completing 20+ modules covering ethical hacking, web/cloud/wireless pentesting, OSINT, Docker, AD, malware, and advanced attack simulation. Skilled in CVE exploitation, MITRE ATT&CK mapping, privilege escalation, and defensive evasion. Over 100+ labs completed on TryHackMe. Seeking SOC L1 or Cybersecurity Analyst roles to apply my expertise in real-world threat environments.
+                    </p>
+
+                    <!-- Skills Grid -->
+                    <div class="flex flex-wrap gap-4 mb-10">
+                        <span class="bg-red-600 text-white px-4 py-2 rounded-lg text-sm">Splunk</span>
+                        <span class="bg-red-600 text-white px-4 py-2 rounded-lg text-sm">Snort</span>
+                        <span class="bg-red-600 text-white px-4 py-2 rounded-lg text-sm">ELK Stack</span>
+                        <span class="bg-red-600 text-white px-4 py-2 rounded-lg text-sm">VAPT</span>
+                        <span class="bg-red-600 text-white px-4 py-2 rounded-lg text-sm">TheHive & Cortex</span>
+                        <span class="bg-red-600 text-white px-4 py-2 rounded-lg text-sm">MITRE ATT&CK</span>
+                        <span class="bg-red-600 text-white px-4 py-2 rounded-lg text-sm">SIEM</span>
+                    </div>
+
+                    <!-- Download CV Button Removed -->
+                    <!-- The <a> element for "Download CV" has been removed as requested. -->
+                </div>
+
+                <!-- Right Side: Picture -->
+                <div class="lg:w-1/3 bg-red-700 flex items-center justify-center p-6 sm:p-10 md:p-12 lg:p-0">
+                    <!-- The profile picture URL has been updated to the latest available file for the image. -->
+                    <img src="./image_a3e97b.jpg-e9af116d-ede8-4993-83cc-21245eca1a09" 
+                         alt="Cybersecurity Professional" 
+                         class="w-full h-full object-cover lg:rounded-none rounded-lg" 
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-white text-4xl font-bold p-8\'>Picture Placeholder</div>'">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SERVICES SECTION -->
+        <section class="mt-20">
+            <!-- Header for Services -->
+            <p class="text-red-500 font-semibold text-sm mb-2 text-center">
+                <span class="mr-2">»</span> My Technical skill
+            </p>
+            <h2 class="text-4xl sm:text-5xl font-bold text-white mb-16 text-center">
+                What I Can Do
+            </h2>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Service 1: Threat Hunting -->
+                <div class="bg-black p-8 rounded-xl shadow-lg hover:shadow-red-900/50 transition duration-300">
+                    <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Threat Hunting</h3>
+                    <p class="text-gray-400 text-sm text-center">
+                        Proactive and iterative searching through networks to detect and isolate advanced threats that evade traditional security solutions.
+                    </p>
+                </div>
+
+                <!-- Service 2: Pentesting & VAPT -->
+                <div class="bg-black p-8 rounded-xl shadow-lg hover:shadow-red-900/50 transition duration-300">
+                    <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Pentesting & VAPT</h3>
+                    <p class="text-gray-400 text-sm text-center">
+                        Conducting authorized simulated attacks to identify security weaknesses in systems, networks, and web applications.
+                    </p>
+                </div>
+
+                <!-- Service 3: SIEM Analysis -->
+                <div class="bg-black p-8 rounded-xl shadow-lg hover:shadow-red-900/50 transition duration-300">
+                    <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l2-2 2 2v13M9 19h6M4 11h2M18 11h2M4 15h2M18 15h2M4 19h2M18 19h2M10 3a1 1 0 011-1h2a1 1 0 011 1v1h-4V3z"></path></svg>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">SIEM Analysis</h3>
+                    <p class="text-gray-400 text-sm text-center">
+                        Centralized security information and event management (SIEM) log analysis using Splunk and ELK for real-time threat detection.
+                    </p>
+                </div>
+
+                <!-- Service 4: Incident Response -->
+                <div class="bg-black p-8 rounded-xl shadow-lg hover:shadow-red-900/50 transition duration-300">
+                    <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.048c-.088.197-.247.452-.284.582A13.921 13.921 0 003 12c0 4.76 3.784 8.615 8.618 8.948.037.13.196.385.284.582A11.955 11.955 0 0012 21.056c4.542-.516 8.223-4.227 8.618-8.948z"></path></svg>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Incident Response</h3>
+                    <p class="text-gray-400 text-sm text-center">
+                        Developing and executing strategic plans for managing and mitigating security breaches, ensuring rapid containment and recovery.
+                    </p>
+                </div>
+
+                <!-- Service 5: Threat Intelligence -->
+                <div class="bg-black p-8 rounded-xl shadow-lg hover:shadow-red-900/50 transition duration-300">
+                    <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Threat Intelligence</h3>
+                    <p class="text-gray-400 text-sm text-center">
+                        Collecting and analyzing threat data to understand attacker tactics, techniques, and procedures (TTPs) for proactive defense.
+                    </p>
+                </div>
+
+                <!-- Service 6: Compliance & Policy -->
+                <div class="bg-black p-8 rounded-xl shadow-lg hover:shadow-red-900/50 transition duration-300">
+                    <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2m-9 0V3h4v2m-4 0h4"></path></svg>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Compliance & Policy</h3>
+                    <p class="text-gray-400 text-sm text-center">
+                        Developing and enforcing security policies to meet regulatory standards like ISO 27001, GDPR, and other industry best practices.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- 3. PROJECTS SECTION -->
+        <section class="mt-20">
+            <p class="text-red-500 font-semibold text-sm mb-2 text-center">
+                <span class="mr-2">»</span> My Work
+            </p>
+            <h2 class="text-4xl sm:text-5xl font-bold text-white mb-16 text-center">
+                Featured Projects
+            </h2>
+
+            <div class="grid grid-cols-1">
+                
+                <!-- Project 1: Comprehensive Security Lab -->
+                <div class="bg-black p-6 rounded-xl shadow-lg border border-red-800/50">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-semibold text-white">WordPress Defense Lab: IDS/IPS, SIEM, and Attack Simulation</h3>
+                        <a href="https://github.com/rashid-csec/WordPress-Security-Monitoring-Lab" target="_blank" class="text-red-400 hover:text-red-500 transition duration-200 text-sm font-medium">
+                            <svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            View Report
+                        </a>
+                    </div>
+                    <p class="text-gray-400 mb-4 font-semibold text-sm">
+                        Design and implementation of a robust security stack for a live WordPress server, focusing on layered defense, centralized logging, and proactive threat detection validated through simulated attacks.
+                    </p>
+                    
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6 ml-4 text-sm">
+                        <li>Set up a secure WordPress environment on Ubuntu with Apache and MySQL.</li>
+                        <li>Developed 15+ Snort detection rules based on OWASP Top 10 attack categories.</li>
+                        <li>Configured Fail2Ban jails to detect and block suspicious activity on SSH, MySQL, and WordPress login portals.</li>
+                        <li>Forwarded logs using Filebeat into the ELK Stack and Splunk SIEM for log correlation and threat visualization.</li>
+                        <li>Created real-time dashboards in Kibana and Splunk to monitor active attack patterns.</li>
+                        <li>Executed simulated cyberattacks to validate detection rules and system resilience.</li>
+                    </ul>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-800 text-red-300 px-3 py-1 rounded-full text-xs font-medium">Snort (IDS/IPS)</span>
+                        <span class="bg-gray-800 text-red-300 px-3 py-1 rounded-full text-xs font-medium">ELK Stack / Kibana</span>
+                        <span class="bg-gray-800 text-red-300 px-3 py-1 rounded-full text-xs font-medium">Splunk</span>
+                        <span class="bg-gray-800 text-red-300 px-3 py-1 rounded-full text-xs font-medium">Fail2Ban</span>
+                        <span class="bg-gray-800 text-red-300 px-3 py-1 rounded-full text-xs font-medium">WordPress / Linux</span>
+                        <span class="bg-gray-800 text-red-300 px-3 py-1 rounded-full text-xs font-medium">Attack Simulation</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. TOOLS SECTION (New Grid Layout: 31 Boxes, 8 per line on large screens) -->
+        <section class="mt-20 mb-20">
+            <p class="text-red-500 font-semibold text-sm mb-2 text-center">
+                <span class="mr-2">»</span> Technical Stack
+            </p>
+            <h2 class="text-4xl sm:text-5xl font-bold text-white mb-16 text-center">
+                Familiar Tools & Technologies
+            </h2>
+
+            <!-- Main Grid Container for 31 Tools -->
+            <!-- Layout: 4 cols (mobile), 6 cols (tablet), 8 cols (desktop) -->
+            <div class="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-4">
+                
+                <!-- Tool Box Component (Total 31) -->
+
+                <!-- Row 1 (SIEM & Defense) -->
+                <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <span class="text-xs font-medium text-gray-200">Splunk></span>
+                </div>
+                <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l2-2 2 2v13M9 19h6"></path></svg>
+                    <span class="text-xs font-medium text-gray-200">ELK Stack</span>
+                </div>
+                <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    <span class="text-xs font-medium text-gray-200">Filebeat</span>
+                </div>
+                <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    <span class="text-xs font-medium text-gray-200">TheHive</span>
+                </div>
+                <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-1.25-3M15 10a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <span class="text-xs font-medium text-gray-200">WaZuh</span>
+                </div>
+                <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    <span class="text-xs font-medium text-gray-200">Snort IDS/IPS</span>
+                </div>
+                <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2c-1.657 0-3 .895-3 2s1.343 2 3 2c1.657 0 3 .895 3 2v1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="text-xs font-medium text-gray-200">Cortex</span>
+                </div>
+                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="text-xs font-medium text-gray-200">Fail2Ban</span>
+                </div>
+
+                <!-- Row 2 (Offensive 1) -->
+                <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5-6h4M3 17h18a2 2 0 002-2V5a2 2 0 00-2-2H3a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <span class="text-xs font-medium text-gray-200">Metasploit</span>
+                </div>
+                <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    <s
