@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rashid Cybersecurity Portfolio</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom font import and body styles for consistency */
@@ -31,6 +30,22 @@
             opacity: 0;
             transition: 0.3s;
         }
+        
+        /* ---------------- TIMELINE SPECIFIC CSS ---------------- */
+        /* This ensures that content is visible on mobile where the vertical line is hidden */
+        .left-timeline .bg-black {
+            margin-right: auto;
+        }
+        .right-timeline .bg-black {
+             margin-left: auto;
+        }
+        @media (min-width: 768px) {
+            /* Desktop alignment for timeline items */
+            .right-timeline > div:first-child {
+                text-align: right;
+            }
+        }
+
 
         /* ---------------- LOADER ---------------- */
         .page-loader {
@@ -73,19 +88,20 @@
 </head>
 <body class="min-h-screen pt-20">
 
-    <!-- ---------------- PAGE LOADER ---------------- -->
     <div class="page-loader">
         <div class="loader"></div>
     </div>
 
-    <!-- ---------------- NAVBAR ---------------- -->
     <header class="w-full py-5 px-4 sm:px-10 fixed top-0 left-0 bg-black/90 shadow-lg backdrop-blur-sm flex justify-end z-50">
         <nav>
             <ul class="nav-menu flex space-x-6 sm:space-x-10 text-sm sm:text-base">
                 <li><a href="#home" class="font-semibold pb-1 hover:text-red-500 transition duration-200">Home</a></li>
                 <li><a href="#about" class="font-semibold pb-1 hover:text-red-500 transition duration-200">About</a></li>
+                <li><a href="#experience" class="font-semibold pb-1 hover:text-red-500 transition duration-200">Experience</a></li> 
+                <li><a href="#certifications" class="font-semibold pb-1 hover:text-red-500 transition duration-200">Certifications</a></li>
                 <li><a href="#projects" class="font-semibold pb-1 hover:text-red-500 transition duration-200">Projects</a></li>
                 <li><a href="#tools" class="font-semibold pb-1 hover:text-red-500 transition duration-200">Tools</a></li>
+                <li><a href="#contact" class="font-semibold pb-1 hover:text-red-500 transition duration-200">Contact</a></li> 
             </ul>
             <div class="underline"></div>
         </nav>
@@ -93,7 +109,6 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <!-- ---------------- HOME SECTION ---------------- -->
         <section id="home" class="flex flex-col lg:flex-row justify-between items-center py-20 min-h-[80vh]">
             <div class="text-box w-full lg:w-1/2 mb-10 lg:mb-0">
                 <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight">
@@ -108,7 +123,6 @@
             </div>
 
             <div class="image-box w-full lg:w-1/2 flex justify-center lg:justify-end">
-                <!-- Using the available image URL provided in the context -->
                 <img src="./image_a3e97b.jpg-e9af116d-ede8-4993-83cc-21245eca1a09" 
                      alt="Rashid, Cybersecurity Professional"
                      class="w-80 h-80 object-cover rounded-xl shadow-2xl border-4 border-red-500/50"
@@ -117,12 +131,10 @@
         </section>
 
         
-        <!-- ---------------- ABOUT ME SECTION ---------------- -->
         <section id="about" class="py-20">
             <div class="bg-black shadow-2xl rounded-xl overflow-hidden">
                 <div class="flex flex-col lg:flex-row">
 
-                    <!-- Left Side: Content -->
                     <div class="lg:w-2/3 p-6 sm:p-10 md:p-12 text-gray-200">
                         <p class="text-red-500 font-semibold text-sm mb-2">
                             <span class="mr-2">»</span> About Me
@@ -131,14 +143,13 @@
                             Who Am I
                         </h2>
 
-                        <!-- Bio Text -->
                         <p class="text-gray-400 leading-relaxed mb-8 text-sm sm:text-base">
-                            My name is Rashid, Certified Cybersecurity Analyst with hands-on experience in SOC monitoring, VAPT, SIEM log analysis, and threat detection using Splunk, Snort, and ELK Stack. Completed an internship at RedTeam Hacker Academy and earned the Certified Penetration Tester (CPT) certification after completing 20+ modules covering ethical hacking, web/cloud/wireless pentesting, OSINT, Docker, AD, malware, and advanced attack simulation. Skilled in CVE exploitation, MITRE ATT&CK mapping, privilege escalation, and defensive evasion. Over 100+ labs completed on TryHackMe. Seeking SOC L1 or Cybersecurity Analyst roles to apply my expertise in real-world threat environments.
+                            My name is Rashid, Certified Cybersecurity Analyst with hands-on experience in **SOC monitoring, VAPT, SIEM log analysis, and threat detection** using Splunk, Snort, and ELK Stack. Completed an internship at RedTeam Hacker Academy and earned the **Certified Penetration Tester (CPT)** certification after completing 20+ modules covering ethical hacking, web/cloud/wireless pentesting, OSINT, Docker, AD, malware, and advanced attack simulation. Skilled in **CVE exploitation, MITRE ATT&CK mapping, privilege escalation**, and defensive evasion. Over **100+ labs completed on TryHackMe**. Seeking SOC L1 or Cybersecurity Analyst roles to apply my expertise in real-world threat environments.
                         </p>
 
-                        <!-- Skills Grid -->
                         <div class="flex flex-wrap gap-3 mb-10">
                             <span class="bg-red-700/70 text-white px-4 py-2 rounded-full text-sm font-medium">Splunk</span>
+                            <span class="bg-gray-800 text-red-500 px-4 py-2 rounded-full text-sm font-medium">CPT</span>
                             <span class="bg-red-700/70 text-white px-4 py-2 rounded-full text-sm font-medium">Snort</span>
                             <span class="bg-red-700/70 text-white px-4 py-2 rounded-full text-sm font-medium">ELK Stack</span>
                             <span class="bg-red-700/70 text-white px-4 py-2 rounded-full text-sm font-medium">VAPT</span>
@@ -148,7 +159,6 @@
                         </div>
                     </div>
 
-                    <!-- Right Side: Skills/Services -->
                     <div class="lg:w-1/3 p-6 sm:p-10 md:p-12 bg-red-900/10 flex flex-col justify-center space-y-4">
                         <h3 class="text-xl font-semibold text-white border-b border-red-700 pb-2 mb-4">Core Competencies</h3>
                         <ul class="text-gray-300 space-y-3 text-sm">
@@ -162,9 +172,113 @@
             </div>
         </section>
 
-        <!-- ---------------- SERVICES SECTION (Integrated into About) ---------------- -->
+        <section id="experience" class="py-20">
+            <p class="text-red-500 font-semibold text-sm mb-2 text-center">
+                <span class="mr-2">»</span> My Journey
+            </p>
+            <h2 class="text-4xl sm:text-5xl font-bold text-white mb-16 text-center">
+                Career Experience & Milestones
+            </h2>
+            
+            <div class="relative max-w-4xl mx-auto">
+                
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-red-800/50 hidden md:block"></div>
+                
+                <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div class="w-full md:w-5/12">
+                        <div class="bg-black p-6 rounded-xl shadow-lg border border-red-800/50 hover:border-red-500 transition duration-300">
+                            <h3 class="text-xl font-semibold text-red-500 mb-1">Cybersecurity Intern</h3>
+                            <p class="text-sm font-medium text-gray-300 mb-3">RedTeam Hacker Academy | May 2025 - June 2025</p>
+                            <ul class="list-disc list-inside text-gray-400 text-sm space-y-1 ml-2">
+                                <li>Conducted **black-box penetration testing** and full-scope Vulnerability Assessments (VAPT).</li>
+                                <li>Generated professional security reports including **CVE, CVSS scoring**, and **MITRE ATT&CK mapping**.</li>
+                                <li>Deployed and configured **Snort IDS** and **Fail2Ban IPS** on Ubuntu servers.</li>
+                                <li>Wrote custom Snort rules to detect SSH brute-force, SQL Injection, XSS, and WordPress abuse.</li>
+                                <li>Built and maintained a centralized log monitoring pipeline using **Filebeat, Logstash, Elasticsearch, and Kibana**.</li>
+                                <li>Integrated **Splunk** for advanced SIEM capabilities, including alert correlation and real-time dashboards.</li>
+                                <li>Simulated attack scenarios using **SQLMap, WPScan, curl, Burp Suite, and Metasploit**.</li>
+                                <li>Triaged security events and performed incident escalation following standard procedures.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-600 rounded-full z-10 border-2 border-black"></div>
+                    <div class="w-full md:w-5/12"></div>
+                </div>
+                <div class="mb-8 flex justify-between items-center w-full left-timeline">
+                    <div class="w-full md:w-5/12"></div>
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-600 rounded-full z-10 border-2 border-black"></div>
+                    <div class="w-full md:w-5/12">
+                         <div class="bg-black p-6 rounded-xl shadow-lg border border-red-800/50 hover:border-red-500 transition duration-300">
+                            <h3 class="text-xl font-semibold text-red-500 mb-1">SIEM & Threat Detection Focus</h3>
+                            <p class="text-sm font-medium text-gray-300 mb-3">Splunk, ELK Stack, TheHive Integration</p>
+                            <p class="text-gray-400 text-sm">
+                                Developed advanced correlation rules and alert dashboards in Splunk and Kibana. Mastered triage and incident handling procedures using SOAR platforms like TheHive/Cortex.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div class="w-full md:w-5/12">
+                        <div class="bg-black p-6 rounded-xl shadow-lg border border-red-800/50 hover:border-red-500 transition duration-300">
+                            <h3 class="text-xl font-semibold text-red-500 mb-1">MITRE ATT&CK Mapping & Red Teaming</h3>
+                            <p class="text-sm font-medium text-gray-300 mb-3">100+ TryHackMe Labs Completed</p>
+                            <p class="text-gray-400 text-sm">
+                                Focused heavily on post-exploitation techniques (Privilege Escalation, Lateral Movement) and mapping findings back to the MITRE ATT&CK framework for effective communication and defense strategy.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-600 rounded-full z-10 border-2 border-black"></div>
+                    <div class="w-full md:w-5/12"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="py-20">
+            <p class="text-red-500 font-semibold text-sm mb-2 text-center">
+                <span class="mr-2">»</span> Credentials
+            </p>
+            <h2 class="text-4xl sm:text-5xl font-bold text-white mb-10 text-center">
+                Certifications & Training
+            </h2>
+
+            <div class="max-w-3xl mx-auto space-y-6">
+                
+                <div class="bg-black p-6 rounded-xl shadow-lg border border-red-800/50 flex flex-col sm:flex-row items-start sm:items-center justify-between transition duration-300 hover:border-red-500">
+                    <div class="mb-2 sm:mb-0">
+                        <h3 class="text-xl font-semibold text-red-500">Certified Penetration Tester (CPT)</h3>
+                        <p class="text-gray-400 text-sm">Issued by: RedTeam Hacker Academy</p>
+                    </div>
+                    <span class="bg-red-900/50 text-white text-xs font-medium px-3 py-1 rounded-full">Primary Certification</span>
+                </div>
+
+                <div class="bg-black p-6 rounded-xl shadow-lg border border-red-800/50 flex flex-col sm:flex-row items-start sm:items-center justify-between transition duration-300 hover:border-red-500">
+                    <div class="mb-2 sm:mb-0">
+                        <h3 class="text-xl font-semibold text-white">Certified Security Analyst (CSA)</h3>
+                        <p class="text-gray-400 text-sm">Issued by: EC-Council</p>
+                    </div>
+                    <span class="bg-red-900/50 text-white text-xs font-medium px-3 py-1 rounded-full">Analyst Skillset</span>
+                </div>
+
+                <div class="bg-black p-6 rounded-xl shadow-lg border border-red-800/50 flex flex-col sm:flex-row items-start sm:items-center justify-between transition duration-300 hover:border-red-500">
+                    <div class="mb-2 sm:mb-0">
+                        <h3 class="text-xl font-semibold text-white">Jr Penetration tester - Learning Path</h3>
+                        <p class="text-gray-400 text-sm">Issued by: TryHackMe</p>
+                    </div>
+                    <span class="bg-red-900/50 text-white text-xs font-medium px-3 py-1 rounded-full">Practical Training</span>
+                </div>
+                
+                <div class="bg-black p-6 rounded-xl shadow-lg border border-red-800/50 flex flex-col sm:flex-row items-start sm:items-center justify-between transition duration-300 hover:border-red-500">
+                    <div class="mb-2 sm:mb-0">
+                        <h3 class="text-xl font-semibold text-white">Cyber Security 101 · Pre-Security</h3>
+                        <p class="text-gray-400 text-sm">Issued by: TryHackMe</p>
+                    </div>
+                    <span class="bg-red-900/50 text-white text-xs font-medium px-3 py-1 rounded-full">Foundational</span>
+                </div>
+
+            </div>
+        </section>
         <section class="mt-20">
-            <!-- Header for Services -->
             <p class="text-red-500 font-semibold text-sm mb-2 text-center">
                 <span class="mr-2">»</span> My Technical Skillset
             </p>
@@ -172,10 +286,8 @@
                 What I Can Deliver
             </h2>
 
-            <!-- Services Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Service 1: Threat Hunting -->
                 <div class="bg-black p-8 rounded-xl shadow-lg hover:shadow-red-900/50 transition duration-300 border border-transparent hover:border-red-500">
                     <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
                     <h3 class="text-xl font-semibold text-white mb-2 text-center">Threat Hunting</h3>
@@ -184,7 +296,6 @@
                     </p>
                 </div>
 
-                <!-- Service 2: Pentesting & VAPT -->
                 <div class="bg-black p-8 rounded-xl shadow-lg hover:shadow-red-900/50 transition duration-300 border border-transparent hover:border-red-500">
                     <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                     <h3 class="text-xl font-semibold text-white mb-2 text-center">Pentesting & VAPT</h3>
@@ -193,7 +304,6 @@
                     </p>
                 </div>
 
-                <!-- Service 3: SIEM Analysis -->
                 <div class="bg-black p-8 rounded-xl shadow-lg hover:shadow-red-900/50 transition duration-300 border border-transparent hover:border-red-500">
                     <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l2-2 2 2v13m-2-13h-2m4 0h-2M9 19h6M4 11h2M18 11h2M4 15h2M18 15h2M4 19h2M18 19h2M10 3a1 1 0 011-1h2a1 1 0 011 1v1h-4V3z"></path></svg>
                     <h3 class="text-xl font-semibold text-white mb-2 text-center">SIEM Analysis</h3>
@@ -202,7 +312,6 @@
                     </p>
                 </div>
 
-                <!-- Service 4: Incident Response -->
                 <div class="bg-black p-8 rounded-xl shadow-lg hover:shadow-red-900/50 transition duration-300 border border-transparent hover:border-red-500">
                     <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.048c-.088.197-.247.452-.284.582A13.921 13.921 0 003 12c0 4.76 3.784 8.615 8.618 8.948.037.13.196.385.284.582A11.955 11.955 0 0012 21.056c4.542-.516 8.223-4.227 8.618-8.948z"></path></svg>
                     <h3 class="text-xl font-semibold text-white mb-2 text-center">Incident Response</h3>
@@ -211,7 +320,6 @@
                     </p>
                 </div>
 
-                <!-- Service 5: Threat Intelligence -->
                 <div class="bg-black p-8 rounded-xl shadow-lg hover:shadow-red-900/50 transition duration-300 border border-transparent hover:border-red-500">
                     <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     <h3 class="text-xl font-semibold text-white mb-2 text-center">Threat Intelligence</h3>
@@ -220,7 +328,6 @@
                     </p>
                 </div>
 
-                <!-- Service 6: Compliance & Policy -->
                 <div class="bg-black p-8 rounded-xl shadow-lg hover:shadow-red-900/50 transition duration-300 border border-transparent hover:border-red-500">
                     <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2m-9 0V3h4v2m-4 0h4"></path></svg>
                     <h3 class="text-xl font-semibold text-white mb-2 text-center">Compliance & Policy</h3>
@@ -233,7 +340,6 @@
         </section>
 
 
-        <!-- ---------------- PROJECTS SECTION ---------------- -->
         <section id="projects" class="mt-20 py-20">
             <p class="text-red-500 font-semibold text-sm mb-2 text-center">
                 <span class="mr-2">»</span> My Work
@@ -244,7 +350,6 @@
 
             <div class="grid grid-cols-1">
                 
-                <!-- Project 1: Comprehensive Security Lab -->
                 <div class="bg-black p-6 rounded-xl shadow-lg border border-red-800/50 hover:border-red-500 transition duration-300">
                     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4">
                         <h3 class="text-xl sm:text-2xl font-semibold text-white mb-2 sm:mb-0">WordPress Defense Lab: IDS/IPS, SIEM, and Attack Simulation</h3>
@@ -275,10 +380,39 @@
                         <span class="bg-gray-800 text-red-300 px-3 py-1 rounded-full text-xs font-medium">Attack Simulation</span>
                     </div>
                 </div>
+
+                <div class="bg-black p-6 mt-8 rounded-xl shadow-lg border border-red-800/50 hover:border-red-500 transition duration-300">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4">
+                        <h3 class="text-xl sm:text-2xl font-semibold text-white mb-2 sm:mb-0">Active Directory Exploitation and Defense Lab</h3>
+                        <a href="https://github.com/rashid-csec/Active-Directory-Lab-Report" target="_blank" class="text-red-400 hover:text-red-500 transition duration-200 text-sm font-medium flex items-center mt-2 sm:mt-0">
+                            <svg class="w-5 h-5 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            View Report
+                        </a>
+                    </div>
+                    <p class="text-gray-400 mb-4 font-semibold text-sm">
+                        Simulated a multi-stage attack against a vulnerable Windows Server Active Directory environment, focusing on enumeration, credential access, and privilege escalation to Domain Admin.
+                    </p>
+                    
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6 ml-4 text-sm">
+                        <li>Set up a test environment: Domain Controller, Member Server, and Kali Linux attack machine on VirtualBox.</li>
+                        <li>Utilized tools like **BloodHound** and **Enum4linux** for comprehensive network and relationship enumeration.</li>
+                        <li>Executed common attacks: **Kerberoasting, Pass-the-Hash**, and exploitation of misconfigured ACLs.</li>
+                        <li>Achieved **Domain Administrator** privileges and documented the entire attack path, including lateral movement.</li>
+                        <li>Provided defensive recommendations (least privilege, monitoring policies) for mitigation.</li>
+                    </ul>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-800 text-red-300 px-3 py-1 rounded-full text-xs font-medium">Active Directory</span>
+                        <span class="bg-gray-800 text-red-300 px-3 py-1 rounded-full text-xs font-medium">BloodHound</span>
+                        <span class="bg-gray-800 text-red-300 px-3 py-1 rounded-full text-xs font-medium">Kerberoasting</span>
+                        <span class="bg-gray-800 text-red-300 px-3 py-1 rounded-full text-xs font-medium">Windows Server</span>
+                        <span class="bg-gray-800 text-red-300 px-3 py-1 rounded-full text-xs font-medium">Privilege Escalation</span>
+                        <span class="bg-gray-800 text-red-300 px-3 py-1 rounded-full text-xs font-medium">Lateral Movement</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- ---------------- TOOLS SECTION ---------------- -->
         <section id="tools" class="mt-20 mb-20 py-20">
             <p class="text-red-500 font-semibold text-sm mb-2 text-center">
                 <span class="mr-2">»</span> Technical Stack
@@ -287,171 +421,162 @@
                 Familiar Tools & Technologies
             </h2>
 
-            <!-- Main Grid Container for 31 Tools -->
-            <!-- Layout: 4 cols (mobile), 6 cols (tablet), 8 cols (desktop) -->
             <div class="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-4">
                 
-                <!-- Tool Box Component (Total 31) - Using generic icons as a placeholder for specific tool logos -->
-
-                <!-- Row 1 (SIEM & Defense) -->
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.75l-4-4 1.41-1.41L11 14.94l5.59-5.59L18 10.75l-7 7z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-3-12l2 2m-2-2h-2M15 12l2 2m-2-2h-2M15 20l2-2m-2 2h-2M12 2l-2 2m2-2v2"/></svg>
                     <span class="text-xs font-medium text-gray-200">Splunk></span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10m12-4v4m0 0l2-2m-2 2l-2-2M16 7L8 3v13l8 4V7zM6 19v-9"></path></svg>
                     <span class="text-xs font-medium text-gray-200">ELK Stack</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2V13h2v4z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-3-3v6m-2 4h4a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zM3 12h.01M20.99 12h.01"></path></svg>
                     <span class="text-xs font-medium text-gray-200">Filebeat</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9.5 5.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5S8 7.33 8 6.5s.67-1.5 1.5-1.5zM12 19H7v-1.5c0-.83.67-1.5 1.5-1.5h3c.83 0 1.5.67 1.5 1.5V19zm1-7.5l-4-4-4 4h8z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.048c-.088.197-.247.452-.284.582A13.921 13.921 0 003 12c0 4.76 3.784 8.615 8.618 8.948.037.13.196.385.284.582A11.955 11.955 0 0012 21.056c4.542-.516 8.223-4.227 8.618-8.948z"/></svg>
                     <span class="text-xs font-medium text-gray-200">TheHive</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8zm.4 12.3c-.63 0-1.22-.3-1.6-.78l-.8 1.1c.64.6 1.48.98 2.4.98 1.47 0 2.7-.85 3.32-2.1l-.87-.48c-.46.91-1.37 1.48-2.45 1.48zM12 7.7c-1.6 0-3.1.8-3.8 2.2l-1.2-1.2c1.1-1.4 2.8-2.2 4.8-2.2 1.9 0 3.6.8 4.7 2.2l-1.2 1.2c-.8-1.4-2.2-2.2-3.3-2.2z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                     <span class="text-xs font-medium text-gray-200">WaZuh</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                     <span class="text-xs font-medium text-gray-200">Snort IDS/IPS</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 000 2.856l2.572 2.572a.5.5 0 01-.353.854H2.353a.5.5 0 01-.353-.854l2.572-2.572a2 2 0 000-2.856V9a2 2 0 012-2h10a2 2 0 012 2v6.428z"/></svg>
                     <span class="text-xs font-medium text-gray-200">Cortex</span>
                 </div>
                  <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636M12 21V3"/></svg>
                     <span class="text-xs font-medium text-gray-200">Fail2Ban</span>
                 </div>
 
-                <!-- Row 2 (Offensive 1) -->
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     <span class="text-xs font-medium text-gray-200">Metasploit</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm6 4h6m-6 4h6m-6 4h6"/></svg>
                     <span class="text-xs font-medium text-gray-200">Burp Suite</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0017 10c0-3.59-2.67-6.5-6-6.5S5 6.41 5 10c0 3.12 2.03 5.7 4.93 6.34L10 17h.79l.28.27a6.471 6.471 0 004.74 1.73c3.59 0 6.5-2.67 6.5-6s-2.67-6.5-6.5-6.5z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                     <span class="text-xs font-medium text-gray-200">Nmap</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.98c-2.76 0-5.32-1.33-7.2-3.55l1.69-1.34c1.37 1.62 3.4 2.68 5.51 2.68 4.41 0 8-3.59 8-8s-3.59-8-8-8c-1.57 0-3.03.46-4.28 1.27l-1.34-1.69C7.32 3.82 9.5 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
                     <span class="text-xs font-medium text-gray-200">SQLMap</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-1.99.9-1.99 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m3 0a2 2 0 100 4m0-4a2 2 0 110-4m12 8a2 2 0 100 4m0-4a2 2 0 110-4M5 3v2m0 8v2m0 8v2M20 3v2m0 8v2m0 8v2M3 10h2m14 0h2M3 14h2m14 0h2"/></svg>
                     <span class="text-xs font-medium text-gray-200">Wireshark</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V9a2 2 0 012-2zM4 10h1v4H4v-4zm16 0h-1v4h1v-4zM7 17h10M7 7h10"/></svg>
                     <span class="text-xs font-medium text-gray-200">John the Ripper</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M10 16h.01"/></svg>
                     <span class="text-xs font-medium text-gray-200">Nessus</span>
                 </div>
                  <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2s2 .9 2 2v4c0 1.1-.9 2-2 2zm-5 0c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2s2 .9 2 2v4c0 1.1-.9 2-2 2z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 1.66-1.34 3-3 3S6 12.66 6 11s1.34-3 3-3 3 1.34 3 3zM21 12c0-1.66-1.34-3-3-3s-3 1.34-3 3 1.34 3 3 3 3-1.34 3-3zM3 12c0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3-3 1.34-3 3z"/></svg>
                     <span class="text-xs font-medium text-gray-200">Hashcat</span>
                 </div>
-                
-                <!-- Row 3 (Offensive 2 & OS) -->
+
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
                     <span class="text-xs font-medium text-gray-200">WPScan</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                     <span class="text-xs font-medium text-gray-200">Hydra</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.98c-2.76 0-5.32-1.33-7.2-3.55l1.69-1.34c1.37 1.62 3.4 2.68 5.51 2.68 4.41 0 8-3.59 8-8s-3.59-8-8-8c-1.57 0-3.03.46-4.28 1.27l-1.34-1.69C7.32 3.82 9.5 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
                     <span class="text-xs font-medium text-gray-200">Wfuzz</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
                     <span class="text-xs font-medium text-gray-200">Netcat</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.98c-2.76 0-5.32-1.33-7.2-3.55l1.69-1.34c1.37 1.62 3.4 2.68 5.51 2.68 4.41 0 8-3.59 8-8s-3.59-8-8-8c-1.57 0-3.03.46-4.28 1.27l-1.34-1.69C7.32 3.82 9.5 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2zM15 13l2-2m0 0l-2-2m2 2h-4"/></svg>
                     <span class="text-xs font-medium text-gray-200">Dirbuster</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.98c-2.76 0-5.32-1.33-7.2-3.55l1.69-1.34c1.37 1.62 3.4 2.68 5.51 2.68 4.41 0 8-3.59 8-8s-3.59-8-8-8c-1.57 0-3.03.46-4.28 1.27l-1.34-1.69C7.32 3.82 9.5 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     <span class="text-xs font-medium text-gray-200">Xxser</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1m0 0h2.5M19 11H5a2 2 0 00-2 2v1a2 2 0 002 2h14a2 2 0 002-2v-1a2 2 0 00-2-2zM13 17V8M5 17h14"/></svg>
                     <span class="text-xs font-medium text-gray-200">Nikto</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.98c-2.76 0-5.32-1.33-7.2-3.55l1.69-1.34c1.37 1.62 3.4 2.68 5.51 2.68 4.41 0 8-3.59 8-8s-3.59-8-8-8c-1.57 0-3.03.46-4.28 1.27l-1.34-1.69C7.32 3.82 9.5 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/></svg>
                     <span class="text-xs font-medium text-gray-200">Kali Linux</span>
                 </div>
 
-                <!-- Row 4 (OS & VAPT/Cracking) -->
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.98c-2.76 0-5.32-1.33-7.2-3.55l1.69-1.34c1.37 1.62 3.4 2.68 5.51 2.68 4.41 0 8-3.59 8-8s-3.59-8-8-8c-1.57 0-3.03.46-4.28 1.27l-1.34-1.69C7.32 3.82 9.5 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.25 15.375V15.375A2.625 2.625 0 0117.625 18H5.625A2.625 2.625 0 013 15.375V12.75A2.625 2.625 0 015.625 10.125h12A2.625 2.625 0 0120.25 12.75v2.625zM12 7.5l-4 4M12 7.5l4 4M8 11.5v-3.5"/></svg>
                     <span class="text-xs font-medium text-gray-200">Apache</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3L12 6.5l2.25-3M12 6.5L14.25 3h-4.5M16.5 6L12 11.5l-4.5-5.5M12 11.5L7.5 16l4.5 5 4.5-5M7.5 16L3 21h18L16.5 16"/></svg>
                     <span class="text-xs font-medium text-gray-200">Windows</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.98c-2.76 0-5.32-1.33-7.2-3.55l1.69-1.34c1.37 1.62 3.4 2.68 5.51 2.68 4.41 0 8-3.59 8-8s-3.59-8-8-8c-1.57 0-3.03.46-4.28 1.27l-1.34-1.69C7.32 3.82 9.5 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
                     <span class="text-xs font-medium text-gray-200">Docker</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.98c-2.76 0-5.32-1.33-7.2-3.55l1.69-1.34c1.37 1.62 3.4 2.68 5.51 2.68 4.41 0 8-3.59 8-8s-3.59-8-8-8c-1.57 0-3.03.46-4.28 1.27l-1.34-1.69C7.32 3.82 9.5 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM12 4v2m0 12v2m8-8h2M4 12H2"/></svg>
                     <span class="text-xs font-medium text-gray-200">OSINT</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-1.75-3M21 16V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2h14a2 2 0 002-2z"/></svg>
                     <span class="text-xs font-medium text-gray-200">VirtualBox</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.98c-2.76 0-5.32-1.33-7.2-3.55l1.69-1.34c1.37 1.62 3.4 2.68 5.51 2.68 4.41 0 8-3.59 8-8s-3.59-8-8-8c-1.57 0-3.03.46-4.28 1.27l-1.34-1.69C7.32 3.82 9.5 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m3 0a2 2 0 100 4m0-4a2 2 0 110-4m12 8a2 2 0 100 4m0-4a2 2 0 110-4M3 21h18"/></svg>
                     <span class="text-xs font-medium text-gray-200">WordPress</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-1.99.9-1.99 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
                     <span class="text-xs font-medium text-gray-200">Mobile Pentesting</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
                     <span class="text-xs font-medium text-gray-200">Exploit Dev</span>
                 </div>
 
-                <!-- Row 5 (Security Concepts & Misc) -->
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7l5.447-2.724A1 1 0 0115 5.618v10.764a1 1 0 01-.447.894L9 18l-5.447-2.724"/></svg>
                     <span class="text-xs font-medium text-gray-200">MITRE ATT&CK</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.98c-2.76 0-5.32-1.33-7.2-3.55l1.69-1.34c1.37 1.62 3.4 2.68 5.51 2.68 4.41 0 8-3.59 8-8s-3.59-8-8-8c-1.57 0-3.03.46-4.28 1.27l-1.34-1.69C7.32 3.82 9.5 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/></svg>
                     <span class="text-xs font-medium text-gray-200">Gobuster</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16M9 4V2M15 4V2M9 22v-2M15 22v-2"/></svg>
                     <span class="text-xs font-medium text-gray-200">Active Directory</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.98c-2.76 0-5.32-1.33-7.2-3.55l1.69-1.34c1.37 1.62 3.4 2.68 5.51 2.68 4.41 0 8-3.59 8-8s-3.59-8-8-8c-1.57 0-3.03.46-4.28 1.27l-1.34-1.69C7.32 3.82 9.5 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0h6"/></svg>
                     <span class="text-xs font-medium text-gray-200">Network Forensics</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6-6h6m-6 4h6m-2 2h2m-2-6h2m-2 4h2M9 3v4m6-4v4m-6 4v4m6-4v4M3 3h18v18H3V3z"/></svg>
                     <span class="text-xs font-medium text-gray-200">Zaproxy</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                     <span class="text-xs font-medium text-gray-200">EDR</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
@@ -459,57 +584,69 @@
                     <span class="text-xs font-medium text-gray-200">Python</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414l2.828 2.828m-2.828-2.828l-8 8m8-8l-8 8m4.243-7.071l4.95 4.95M16 9l4-4"/></svg>
                     <span class="text-xs font-medium text-gray-200">CVE Exploitation</span>
                 </div>
                 
-                <!-- Row 6 (The last 7 items to complete 31) -->
-                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.98c-2.76 0-5.32-1.33-7.2-3.55l1.69-1.34c1.37 1.62 3.4 2.68 5.51 2.68 4.41 0 8-3.59 8-8s-3.59-8-8-8c-1.57 0-3.03.46-4.28 1.27l-1.34-1.69C7.32 3.82 9.5 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/></svg>
+                <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                     <span class="text-xs font-medium text-gray-200">Privilege Escalation</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
                     <span class="text-xs font-medium text-gray-200">Cloud Security</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.98c-2.76 0-5.32-1.33-7.2-3.55l1.69-1.34c1.37 1.62 3.4 2.68 5.51 2.68 4.41 0 8-3.59 8-8s-3.59-8-8-8c-1.57 0-3.03.46-4.28 1.27l-1.34-1.69C7.32 3.82 9.5 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.048c-.088.197-.247.452-.284.582A13.921 13.921 0 003 12c0 4.76 3.784 8.615 8.618 8.948.037.13.196.385.284.582A11.955 11.955 0 0012 21.056c4.542-.516 8.223-4.227 8.618-8.948z"/></svg>
                     <span class="text-xs font-medium text-gray-200">Firewall Rules</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
                     <span class="text-xs font-medium text-gray-200">Balack-Box</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.98c-2.76 0-5.32-1.33-7.2-3.55l1.69-1.34c1.37 1.62 3.4 2.68 5.51 2.68 4.41 0 8-3.59 8-8s-3.59-8-8-8c-1.57 0-3.03.46-4.28 1.27l-1.34-1.69C7.32 3.82 9.5 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21h.01M17 17l-2.732 1.366A1 1 0 0113.518 19H9.482a1 1 0 01-.75-1.634L11 15m2 2l-3-3m0 0l-3-3"/></svg>
                     <span class="text-xs font-medium text-gray-200">Red Team Ops</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.048c-.088.197-.247.452-.284.582A13.921 13.921 0 003 12c0 4.76 3.784 8.615 8.618 8.948.037.13.196.385.284.582A11.955 11.955 0 0012 21.056c4.542-.516 8.223-4.227 8.618-8.948z"/></svg>
                     <span class="text-xs font-medium text-gray-200">Blue Team Ops</span>
                 </div>
                 <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
-                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.98c-2.76 0-5.32-1.33-7.2-3.55l1.69-1.34c1.37 1.62 3.4 2.68 5.51 2.68 4.41 0 8-3.59 8-8s-3.59-8-8-8c-1.57 0-3.03.46-4.28 1.27l-1.34-1.69C7.32 3.82 9.5 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/></svg>
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M10 16h.01"/></svg>
                     <span class="text-xs font-medium text-gray-200">Security Policy</span>
                 </div>
+                <div class="tool-box bg-black p-3 rounded-xl shadow-md border border-red-800/50 flex flex-col items-center justify-center text-center space-y-2">
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V9a2 2 0 012-2zM4 10h1v4H4v-4zm16 0h-1v4h1v-4zM7 17h10M7 7h10"/></svg>
+                    <span class="text-xs font-medium text-gray-200">Web App Scanners</span>
+                </div>
+
 
             </div>
         </section>
 
-        <!-- ---------------- RESUME/CONTACT SECTION (Simple Placeholder) ---------------- -->
-        <section id="resume" class="mt-10 mb-20 py-16 bg-red-900/10 rounded-xl text-center">
-            <h2 class="text-4xl font-bold text-white mb-4">Ready to Connect?</h2>
-            <p class="text-lg text-gray-300 mb-8">
+        <section id="contact" class="mt-10 mb-20 py-16 bg-red-900/10 rounded-xl text-center">
+            <h2 class="text-4xl font-bold text-white mb-4">Let's Connect and Collaborate</h2>
+            <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
                 I am actively seeking SOC L1 or Cybersecurity Analyst roles. Contact me to discuss how my expertise can strengthen your security posture.
             </p>
-            <a href="mailto:rashidok.csec@gmail.com" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-lg shadow-xl">
-                Get In Touch
-            </a>
+            
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                
+                <a href="mailto:rashid.csec@example.com" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-lg shadow-xl flex items-center justify-center">
+                    <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    Email Me Directly
+                </a>
+                
+                <a href="/path/to/rashid_resume.pdf" download class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-lg shadow-xl border border-gray-600 flex items-center justify-center">
+                    <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14h-3v3h-2v-3H8v-2h3V8h2v3h3v2z"/></svg>
+                    Download Resume
+                </a>
+            </div>
         </section>
 
     </main>
 
-    <!-- ---------------- JAVASCRIPT ---------------- -->
     <script>
         /* ------------ PAGE LOADER ------------ */
         const loader = document.querySelector('.page-loader');
@@ -553,11 +690,13 @@
 
             link.addEventListener('mouseleave', () => {
                 // If you want the underline to fade out completely when not hovered
+                // This keeps the hover effect, but it will fade out when the mouse leaves.
+                // The Scroll Spy below provides the permanent highlight.
                 underline.style.opacity = 0;
             });
         });
         
-        // Optional: Implement scroll spy to highlight current section
+        /* ------------ SCROLL SPY (HIGHLIGHT ACTIVE LINK) ------------ */
         const sections = document.querySelectorAll('main section');
         
         const observerOptions = {
@@ -576,6 +715,12 @@
                         if (link.getAttribute('href') === `#${entry.target.id}`) {
                             link.classList.add('active');
                             link.style.color = '#e74c3c'; // Highlight active link
+                            
+                            // Optionally, update the underline position to the currently active link
+                            const rect = link.getBoundingClientRect();
+                            underline.style.width = rect.width + 'px';
+                            underline.style.left = link.offsetLeft + 'px';
+                            // We don't set opacity here, as it's controlled by mouseenter/mouseleave for the animation.
                         }
                     });
                 }
@@ -590,5 +735,3 @@
 
 </body>
 </html>
-
-
